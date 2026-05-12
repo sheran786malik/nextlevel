@@ -244,10 +244,10 @@ function Hero({ onReferralClick }) {
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mx-auto mb-9 h-16 w-px bg-gradient-to-b from-transparent to-[#E4BC72]" />
 
-        <div className="mx-auto mb-8 inline-flex items-center gap-3 rounded-full border border-[#E4BC72]/30 bg-[#C5973A]/10 px-5 py-2 text-[11px] font-medium uppercase tracking-[0.28em] text-[#E4BC72]">
+        {/* <div className="mx-auto mb-8 inline-flex items-center gap-3 rounded-full border border-[#E4BC72]/30 bg-[#C5973A]/10 px-5 py-2 text-[11px] font-medium uppercase tracking-[0.28em] text-[#E4BC72]">
           <span className="h-1.5 w-1.5 rounded-full bg-[#E4BC72]" />
           Specialist Educational Services · UK
-        </div>
+        </div> */}
 
         <h1 className="font-serif text-6xl font-light leading-[0.95] tracking-tight text-white sm:text-7xl lg:text-8xl">
           Every Child Deserves
