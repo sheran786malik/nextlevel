@@ -4,14 +4,26 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import Homepage from './pages/Home/Homepage'
+import { Routes, Route } from "react-router-dom";
+import ProvisionPage from './pages/Provisions/EBSAProvisionPage'
+import Navbar from './components/Navbar/Navbar'
+import Footer from './components/Footer/Footer'
+import SupportedAccommodationPage from './pages/Provisions/SupportedAccomodation'
+import AlternativeProvisionPage from './pages/Provisions/AlternativeProvisions'
+import BespokeCurriculumPage from './pages/Provisions/BespokeCurriculum'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-     <Homepage/>
-    </>
+    <Routes>
+    <Route path="/" element={<Homepage />} />
+    <Route path="/provisions/ebsa-support" element={<ProvisionPage/>} />
+    <Route path="/provisions/supported-accommodation" element={<SupportedAccommodationPage/>} />
+    <Route path="/provisions/alternative-provisions" element={<AlternativeProvisionPage/>} />
+    <Route path="/provisions/bespoke-curriculum" element={<BespokeCurriculumPage/>} />
+    {/* <Footer/> */}
+  </Routes>
   )
 }
 
