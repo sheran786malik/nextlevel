@@ -1,188 +1,204 @@
-export default function AboutUsPage() {
-    const values = [
-      {
-        title: "Compassion",
-        body: "We lead with empathy, patience and understanding, recognising that every young person’s journey is unique.",
-      },
-      {
-        title: "Safety",
-        body: "We create environments where young people feel emotionally and physically safe, supported and respected.",
-      },
-      {
-        title: "Growth",
-        body: "We believe every child and young person deserves the opportunity to rebuild confidence and reach their potential.",
-      },
-      {
-        title: "Integrity",
-        body: "We work transparently and collaboratively with families, schools, local authorities and professionals.",
-      },
-    ];
-  
-    const aims = [
-      "Provide safe, nurturing and structured environments for vulnerable young people.",
-      "Support children and young people experiencing barriers to mainstream education.",
-      "Promote emotional wellbeing, confidence and resilience.",
-      "Deliver tailored educational and personal development pathways.",
-      "Work collaboratively with families, schools and local authorities.",
-      "Encourage independence, aspiration and positive long-term outcomes.",
-    ];
-  
-    return (
-      <main className="min-h-screen bg-[#F8F5EF] text-[#163826]">
-        {/* HERO */}
-        <section className="relative overflow-hidden bg-[#0D1F17] px-5 py-32 text-white sm:px-8 lg:px-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#1F5C3A_0%,transparent_45%)]" />
-  
-          <div className="relative mx-auto max-w-6xl">
-            <div className="mb-6 flex items-center gap-3">
-              <div className="h-px w-12 bg-[#E4BC72]" />
-              <span className="text-xs uppercase tracking-[0.3em] text-[#E4BC72]">
-                About Us
+import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
+
+const about = {
+  title: "About Us",
+
+  introduction:
+    "Next Level is a specialist educational and support organisation dedicated to helping children and young people who face barriers to mainstream education. We work alongside local authorities, schools, families and professionals to provide safe, structured and child-centred support that creates meaningful long-term outcomes.",
+
+  values: [
+    "Child-centred practice",
+    "Trauma-informed support",
+    "Consistency and stability",
+    "Safeguarding first",
+    "Positive long-term outcomes",
+  ],
+
+  mission:
+    "Our mission is to provide compassionate, structured and personalised support that helps young people rebuild confidence, engage positively with education and move towards brighter futures.",
+
+  aims: [
+    "Provide safe and nurturing support environments",
+    "Help young people re-engage with education",
+    "Promote emotional wellbeing and stability",
+    "Support independence and personal growth",
+    "Work collaboratively with families and professionals",
+  ],
+
+  team: [
+    {
+      name: "Mujtaba Rathor",
+      role: "Director",
+      description:
+        "Leading Next Level with a strong focus on safeguarding, child-centred practice and positive outcomes for vulnerable young people.",
+    },
+  ],
+};
+
+export default function AboutPage() {
+  return (
+    <main className="min-h-screen bg-[#F8F5EF] font-sans text-[#0D1F17]">
+      <Navbar/>
+      {/* HERO */}
+      <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-[#0D1F17] px-5 pt-28 text-center text-white sm:px-8 lg:px-10">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#1F5C3A_0%,transparent_55%),radial-gradient(ellipse_at_bottom_right,#2D865355_0%,transparent_45%),linear-gradient(180deg,#0D1F17_0%,#163826_100%)]" />
+
+        <div className="absolute inset-0 bg-[linear-gradient(#9ECFB012_1px,transparent_1px),linear-gradient(90deg,#9ECFB012_1px,transparent_1px)] bg-[size:60px_60px]" />
+
+        <div className="relative z-10 mx-auto max-w-5xl">
+          <p className="mb-6 text-xs font-medium uppercase tracking-[0.3em] text-[#E4BC72]">
+            About Next Level
+          </p>
+
+          <h1 className="font-serif text-6xl font-light leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl">
+            {about.title}
+          </h1>
+        </div>
+      </section>
+
+      {/* INTRODUCTION */}
+      <section className="bg-[#F8F5EF] px-5 py-24 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-5 flex items-center gap-3">
+            <div className="h-px w-10 bg-[#C5973A]" />
+
+            <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">
+              Introduction
+            </span>
+          </div>
+
+          <p className="text-lg font-light leading-9 text-[#4A5568]">
+            {about.introduction}
+          </p>
+        </div>
+      </section>
+
+      {/* VALUES */}
+      <section className="bg-white px-5 py-24 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12">
+            <div className="mb-5 flex items-center gap-3">
+              <div className="h-px w-10 bg-[#C5973A]" />
+
+              <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">
+                Values
               </span>
             </div>
-  
-            <h1 className="max-w-4xl font-serif text-5xl font-light leading-[1] sm:text-6xl lg:text-7xl">
-              Helping young people feel safe, supported and understood.
-            </h1>
-  
-            <p className="mt-8 max-w-3xl text-base font-light leading-8 text-white/70 sm:text-lg">
-              Next Level Support Services is a specialist organisation providing
-              educational support, alternative provision and accommodation services
-              for children and young people across the UK.
-            </p>
+
+            <h2 className="font-serif text-5xl font-light text-[#163826] sm:text-6xl">
+              What guides our work
+            </h2>
           </div>
-        </section>
-  
-        {/* INTRODUCTION */}
-        <section className="px-5 py-24 sm:px-8 lg:px-10">
-          <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2 lg:items-center">
-            <div>
-              <div className="mb-5 flex items-center gap-3">
-                <div className="h-px w-10 bg-[#C5973A]" />
-                <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">
-                  Introduction
-                </span>
+
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+            {about.values.map((value) => (
+              <div
+                key={value}
+                className="rounded-3xl bg-[#F8F5EF] p-8 text-center shadow-sm"
+              >
+                <p className="font-medium text-[#163826]">{value}</p>
               </div>
-  
-              <h2 className="font-serif text-5xl font-light leading-tight sm:text-6xl">
-                Building brighter pathways for young people.
-              </h2>
-            </div>
-  
-            <div className="space-y-6 text-[15px] font-light leading-8 text-[#4A5568] sm:text-base">
-              <p>
-                At Next Level Support Services, we understand that some young
-                people require a different approach to education and support.
-                Many of the children and young people we work with have faced
-                significant challenges including EBSA, trauma, instability,
-                disrupted education or unmet emotional needs.
-              </p>
-  
-              <p>
-                Our role is to provide safe, structured and nurturing support that
-                helps young people rebuild trust, confidence and engagement with
-                education and daily life.
-              </p>
-  
-              <p>
-                We work closely with local authorities, schools, carers and
-                families to create tailored pathways that place the wellbeing and
-                long-term outcomes of the young person at the centre of everything
-                we do.
-              </p>
-            </div>
+            ))}
           </div>
-        </section>
-  
-        {/* VALUES */}
-        <section className="bg-white px-5 py-24 sm:px-8 lg:px-10">
-          <div className="mx-auto max-w-7xl">
-            <div className="mb-14">
-              <div className="mb-5 flex items-center gap-3">
-                <div className="h-px w-10 bg-[#C5973A]" />
-                <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">
-                  Our Values
-                </span>
-              </div>
-  
-              <h2 className="font-serif text-5xl font-light leading-tight sm:text-6xl">
-                The principles that guide our work.
-              </h2>
-            </div>
-  
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-              {values.map((value) => (
-                <div
-                  key={value.title}
-                  className="rounded-3xl border border-black/5 bg-[#F8F5EF] p-8 shadow-sm"
-                >
-                  <h3 className="font-serif text-3xl text-[#163826]">
-                    {value.title}
-                  </h3>
-  
-                  <p className="mt-4 text-sm font-light leading-7 text-[#4A5568]">
-                    {value.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-  
-        {/* MISSION */}
-        <section className="bg-[#163826] px-5 py-24 text-white sm:px-8 lg:px-10">
-          <div className="mx-auto max-w-5xl text-center">
-            <div className="mx-auto mb-5 h-px w-14 bg-[#E4BC72]" />
-  
-            <span className="text-xs uppercase tracking-[0.3em] text-[#E4BC72]">
+        </div>
+      </section>
+
+      {/* MISSION */}
+      <section className="bg-[#F1EDE3] px-5 py-24 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-5xl text-center">
+          <div className="mb-5 flex items-center justify-center gap-3">
+            <div className="h-px w-10 bg-[#C5973A]" />
+
+            <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">
               Our Mission
             </span>
-  
-            <h2 className="mt-6 font-serif text-5xl font-light leading-tight sm:text-6xl">
-              To empower vulnerable young people through compassionate support,
-              safe environments and meaningful opportunities for growth.
+          </div>
+
+          <h2 className="font-serif text-5xl font-light leading-tight text-[#163826] sm:text-6xl">
+            Supporting young people towards brighter futures.
+          </h2>
+
+          <p className="mx-auto mt-8 max-w-4xl text-lg font-light leading-9 text-[#4A5568]">
+            {about.mission}
+          </p>
+        </div>
+      </section>
+
+      {/* AIMS */}
+      <section className="bg-white px-5 py-24 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12">
+            <div className="mb-5 flex items-center gap-3">
+              <div className="h-px w-10 bg-[#C5973A]" />
+
+              <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">
+                Our Aims
+              </span>
+            </div>
+
+            <h2 className="font-serif text-5xl font-light text-[#163826] sm:text-6xl">
+              What we strive to achieve
             </h2>
-  
-            <p className="mx-auto mt-8 max-w-3xl text-[15px] font-light leading-8 text-white/70 sm:text-base">
-              We are committed to helping every young person feel valued, heard
-              and capable of achieving positive outcomes regardless of the
-              challenges they may have faced.
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            {about.aims.map((aim, index) => (
+              <div
+                key={aim}
+                className="flex items-start gap-5 rounded-3xl bg-[#F8F5EF] p-8 shadow-sm"
+              >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#163826] text-sm font-semibold text-[#E4BC72]">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                <p className="text-lg font-light leading-8 text-[#4A5568]">
+                  {aim}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TEAM */}
+      <section className="bg-[#F8F5EF] px-5 py-24 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-12 text-center">
+            <div className="mb-5 flex items-center justify-center gap-3">
+              <div className="h-px w-10 bg-[#C5973A]" />
+
+              <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">
+                Our Team
+              </span>
+            </div>
+
+            <h2 className="font-serif text-5xl font-light text-[#163826] sm:text-6xl">
+              Meet the team
+            </h2>
+          </div>
+
+          <div className="mx-auto max-w-md rounded-3xl bg-white p-10 text-center shadow-sm">
+            <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-[#163826] font-serif text-3xl text-[#E4BC72]">
+              M
+            </div>
+
+            <h3 className="mt-6 font-serif text-3xl text-[#163826]">
+              {about.team[0].name}
+            </h3>
+
+            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-[#C5973A]">
+              {about.team[0].role}
+            </p>
+
+            <p className="mt-6 text-[15px] font-light leading-8 text-[#4A5568]">
+              {about.team[0].description}
             </p>
           </div>
-        </section>
-  
-        {/* AIMS */}
-        <section className="px-5 py-24 sm:px-8 lg:px-10">
-          <div className="mx-auto max-w-7xl">
-            <div className="mb-14">
-              <div className="mb-5 flex items-center gap-3">
-                <div className="h-px w-10 bg-[#C5973A]" />
-                <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">
-                  Our Aims
-                </span>
-              </div>
-  
-              <h2 className="font-serif text-5xl font-light leading-tight sm:text-6xl">
-                What we strive to achieve every day.
-              </h2>
-            </div>
-  
-            <div className="grid gap-5 md:grid-cols-2">
-              {aims.map((aim) => (
-                <div
-                  key={aim}
-                  className="flex gap-4 rounded-2xl bg-white p-6 shadow-sm"
-                >
-                  <div className="mt-1 h-3 w-3 rounded-full bg-[#C5973A]" />
-  
-                  <p className="text-[15px] font-light leading-7 text-[#4A5568]">
-                    {aim}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </main>
-    );
-  }
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
+}

@@ -17,10 +17,11 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    ["About", "/#about"],
-    ["Curriculum", "/#curriculum"],
-    ["Safeguarding", "/#safeguarding"],
-    ["Policies", "/#policies"],
+    ["About", "/about-us"],
+    ["Curriculum", "/curriculum"],
+    ["Safeguarding", "/safeguarding"],
+    ["Policies", "/policies"],
+    
   ];
 
   const provisionLinks = [

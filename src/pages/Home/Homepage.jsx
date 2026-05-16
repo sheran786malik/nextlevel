@@ -2,28 +2,33 @@ import { useEffect, useRef, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
+import { Link } from "react-router-dom";
 
 const services = [
   {
     id: "ebsa-support",
+    path: "/provisions/ebsa-support",
     icon: "🧠",
     title: "EBSA Support",
     body: "Specialist, compassionate provision for children experiencing Emotionally Based School Avoidance.",
   },
   {
     id: "alternative-provisions",
+    path: "/provisions/alternative-provisions",
     icon: "🏫",
     title: "Alternative Provisions",
     body: "High-quality placements that keep education central for young people outside mainstream school.",
   },
   {
     id: "supported-accommodation",
+    path: "/provisions/supported-accommodation",
     icon: "🏡",
     title: "Supported Accommodation",
     body: "Safe, nurturing homes with 24/7 professional support for young people aged 16+.",
   },
   {
     id: "bespoke-curriculum",
+    path: "/provisions/bespoke-curriculum",
     icon: "📚",
     title: "Bespoke Curriculum",
     body: "Personalised learning pathways mapped around individual needs, confidence and long-term outcomes.",
@@ -67,7 +72,6 @@ function useReveal() {
   };
 }
 
-
 function Hero({ onReferralClick }) {
   return (
     <section
@@ -96,7 +100,8 @@ function Hero({ onReferralClick }) {
         </h1>
 
         <p className="mx-auto mt-8  max-w-2xl text-base font-light leading-8 text-white/60 sm:text-lg">
-          We provide specialist alternative education, EBSA support, and safe accommodation for vulnerable children and young people across the UK.
+          We provide specialist alternative education, EBSA support, and safe
+          accommodation for vulnerable children and young people across the UK.
         </p>
 
         <div className="mt-12 flex mb-5 flex-col justify-center gap-4 sm:flex-row">
@@ -124,9 +129,15 @@ function Stats() {
 
   return (
     <section className="bg-[#163826] px-5 sm:px-8 lg:px-10">
-      <div ref={reveal.ref} className={`mx-auto grid max-w-7xl grid-cols-2 lg:grid-cols-4 ${reveal.className}`}>
+      <div
+        ref={reveal.ref}
+        className={`mx-auto grid max-w-7xl grid-cols-2 lg:grid-cols-4 ${reveal.className}`}
+      >
         {stats.map((item) => (
-          <div key={item.value} className="border-white/10 px-4 py-10 text-center lg:border-r last:border-r-0">
+          <div
+            key={item.value}
+            className="border-white/10 px-4 py-10 text-center lg:border-r last:border-r-0"
+          >
             <p className="font-serif text-5xl font-light leading-none text-[#E4BC72] sm:text-6xl">
               {item.value}
             </p>
@@ -144,12 +155,20 @@ function About() {
   const reveal = useReveal();
 
   return (
-    <section id="about" className="bg-[#F8F5EF] px-5 py-24 sm:px-8 lg:px-10 lg:py-32">
-      <div ref={reveal.ref} className={`mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2 ${reveal.className}`}>
+    <section
+      id="about"
+      className="bg-[#F8F5EF] px-5 py-24 sm:px-8 lg:px-10 lg:py-32"
+    >
+      <div
+        ref={reveal.ref}
+        className={`mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2 ${reveal.className}`}
+      >
         <div>
           <div className="mb-5 flex items-center gap-3">
             <div className="h-px w-10 bg-[#C5973A]" />
-            <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">About Us</span>
+            <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">
+              About Us
+            </span>
           </div>
 
           <h2 className="font-serif text-5xl font-light leading-tight text-[#163826] sm:text-6xl">
@@ -159,14 +178,21 @@ function About() {
 
         <div className="space-y-5 text-[15px] font-light leading-8 text-[#4A5568] sm:text-base">
           <p>
-            Next Level is a specialist educational and support organisation dedicated to helping children and young people who face barriers to mainstream education.
+            Next Level is a specialist educational and support organisation
+            dedicated to helping children and young people who face barriers to
+            mainstream education.
           </p>
           <p>
-            We work alongside local authorities, schools, families and multi-agency partners to create safe, nurturing pathways that genuinely change lives.
+            We work alongside local authorities, schools, families and
+            multi-agency partners to create safe, nurturing pathways that
+            genuinely change lives.
           </p>
           <div className="grid gap-3 pt-4 sm:grid-cols-3">
             {["Trauma-informed", "Child-centred", "Outcome-led"].map((item) => (
-              <div key={item} className="rounded-xl bg-white px-5 py-4 text-sm font-medium text-[#1F5C3A] shadow-sm">
+              <div
+                key={item}
+                className="rounded-xl bg-white px-5 py-4 text-sm font-medium text-[#1F5C3A] shadow-sm"
+              >
                 {item}
               </div>
             ))}
@@ -181,29 +207,39 @@ function Services() {
   const reveal = useReveal();
 
   return (
-    <section id="services" className="bg-white px-5 py-24 sm:px-8 lg:px-10 lg:py-32">
+    <section
+      id="services"
+      className="bg-white px-5 py-24 sm:px-8 lg:px-10 lg:py-32"
+    >
       <div className="mx-auto max-w-7xl">
-        <div ref={reveal.ref} className={`mb-16 flex flex-col justify-between gap-8 lg:flex-row lg:items-end ${reveal.className}`}>
+        <div
+          ref={reveal.ref}
+          className={`mb-16 flex flex-col justify-between gap-8 lg:flex-row lg:items-end ${reveal.className}`}
+        >
           <div>
             <div className="mb-5 flex items-center gap-3">
               <div className="h-px w-10 bg-[#C5973A]" />
-              <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">What We Offer</span>
+              <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">
+                What We Offer
+              </span>
             </div>
             <h2 className="font-serif text-5xl font-light leading-tight text-[#163826] sm:text-6xl">
               Our Services
             </h2>
           </div>
           <p className="max-w-md text-[15px] font-light leading-8 text-[#4A5568]">
-            Every provision is designed around the individual. We meet young people where they are and build support around what they need.
+            Every provision is designed around the individual. We meet young
+            people where they are and build support around what they need.
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {services.map((service, index) => (
-            <div
+            <Link
+              to={service.path}
               id={service.id}
               key={service.title}
-              className="scroll-mt-28 group relative overflow-hidden rounded-3xl border border-black/5 bg-[#F8F5EF] p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#163826]/10"
+              className="scroll-mt-28 group relative block overflow-hidden rounded-3xl border border-black/5 bg-[#F8F5EF] p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#163826]/10"
             >
               <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-full bg-[#D4EDE0]/70" />
               <p className="absolute right-7 top-6 font-serif text-sm tracking-[0.25em] text-[#9CA3AF]">
@@ -217,12 +253,12 @@ function Services() {
                 <p className="mt-4 text-sm font-light leading-7 text-[#4A5568]">
                   {service.body}
                 </p>
-                <a href="#contact" className="mt-8 inline-flex items-center gap-3 text-sm font-medium text-[#2D8653]">
+                <div className="mt-8 inline-flex items-center gap-3 text-sm font-medium text-[#2D8653]">
                   Learn more
                   <span className="h-px w-6 bg-[#2D8653] transition-all group-hover:w-10" />
-                </a>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -235,7 +271,10 @@ function Editorial() {
 
   return (
     <section className="grid bg-[#F1EDE3] lg:grid-cols-2">
-      <div ref={reveal.ref} className={`px-5 py-24 sm:px-8 lg:px-20 lg:py-32 ${reveal.className}`}>
+      <div
+        ref={reveal.ref}
+        className={`px-5 py-24 sm:px-8 lg:px-20 lg:py-32 ${reveal.className}`}
+      >
         <div className="mb-10 h-px w-14 bg-[#C5973A]" />
         <h2 className="font-serif text-5xl font-light leading-tight text-[#163826] sm:text-6xl">
           <span className="italic">It seems impossible</span>
@@ -243,11 +282,20 @@ function Editorial() {
           until it is done.
         </h2>
         <p className="mt-8 max-w-xl text-[15px] font-light leading-8 text-[#4A5568]">
-          We believe deeply in the potential of every young person — even those who have been let down by the system. Our holistic, trauma-informed approach creates the conditions for real, lasting change.
+          We believe deeply in the potential of every young person — even those
+          who have been let down by the system. Our holistic, trauma-informed
+          approach creates the conditions for real, lasting change.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
-          {["Trauma-informed practice", "Holistic support", "Evidence-based outcomes"].map((item) => (
-            <span key={item} className="rounded-full bg-white px-5 py-3 text-xs font-medium uppercase tracking-[0.16em] text-[#1F5C3A]">
+          {[
+            "Trauma-informed practice",
+            "Holistic support",
+            "Evidence-based outcomes",
+          ].map((item) => (
+            <span
+              key={item}
+              className="rounded-full bg-white px-5 py-3 text-xs font-medium uppercase tracking-[0.16em] text-[#1F5C3A]"
+            >
               {item}
             </span>
           ))}
@@ -259,8 +307,12 @@ function Editorial() {
         <div className="absolute h-56 w-56 rounded-full border border-white/10" />
         <div className="absolute h-32 w-32 rounded-full border border-white/10" />
         <div className="relative text-center">
-          <p className="select-none font-serif text-[140px] font-light leading-none text-white/10">G</p>
-          <p className="-mt-8 font-serif text-3xl italic text-[#E4BC72]">Next Level</p>
+          <p className="select-none font-serif text-[140px] font-light leading-none text-white/10">
+            G
+          </p>
+          <p className="-mt-8 font-serif text-3xl italic text-[#E4BC72]">
+            Next Level
+          </p>
         </div>
       </div>
     </section>
@@ -271,11 +323,16 @@ function Safeguarding() {
   const reveal = useReveal();
 
   return (
-    <section id="safeguarding" className="bg-[#F8F5EF] px-5 py-24 sm:px-8 lg:px-10 lg:py-32">
+    <section
+      id="safeguarding"
+      className="bg-[#F8F5EF] px-5 py-24 sm:px-8 lg:px-10 lg:py-32"
+    >
       <div ref={reveal.ref} className={`mx-auto max-w-7xl ${reveal.className}`}>
         <div className="mb-5 flex items-center gap-3">
           <div className="h-px w-10 bg-[#C5973A]" />
-          <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">Safeguarding</span>
+          <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">
+            Safeguarding
+          </span>
         </div>
 
         <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start">
@@ -285,11 +342,18 @@ function Safeguarding() {
 
           <div className="rounded-3xl bg-white p-8 shadow-sm lg:p-10">
             <p className="text-[15px] font-light leading-8 text-[#4A5568]">
-              The safety and welfare of every young person is our absolute priority. We operate with clear reporting structures, safer recruitment, trained staff, and strong multi-agency working.
+              The safety and welfare of every young person is our absolute
+              priority. We operate with clear reporting structures, safer
+              recruitment, trained staff, and strong multi-agency working.
             </p>
             <div className="mt-8 rounded-2xl border border-[#E4BC72]/40 bg-[#FBF0D8] p-6">
-              <p className="font-semibold text-[#163826]">Designated Safeguarding Contact</p>
-              <a href="mailto:mujtabahrathor@hotmail.co.uk" className="mt-2 inline-block text-sm font-medium text-[#C5973A]">
+              <p className="font-semibold text-[#163826]">
+                Designated Safeguarding Contact
+              </p>
+              <a
+                href="mailto:mujtabahrathor@hotmail.co.uk"
+                className="mt-2 inline-block text-sm font-medium text-[#C5973A]"
+              >
                 mujtabahrathor@hotmail.co.uk
               </a>
             </div>
@@ -302,7 +366,10 @@ function Safeguarding() {
 
 function Contact() {
   return (
-    <section id="contact" className="bg-[#0D1F17] px-5 py-24 text-center sm:px-8 lg:px-10 lg:py-32">
+    <section
+      id="contact"
+      className="bg-[#0D1F17] px-5 py-24 text-center sm:px-8 lg:px-10 lg:py-32"
+    >
       <div className="mx-auto max-w-3xl">
         <div className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-full border border-[#E4BC72]/40 text-3xl text-[#E4BC72]">
           ✉
@@ -311,7 +378,8 @@ function Contact() {
           Make a referral or start a conversation.
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-[15px] font-light leading-8 text-white/50">
-          For referrals, policy documents, partnerships or general enquiries, contact the team directly by email.
+          For referrals, policy documents, partnerships or general enquiries,
+          contact the team directly by email.
         </p>
         <a
           href="mailto:mujtabahrathor@hotmail.co.uk"
@@ -476,15 +544,15 @@ export default function Homepage() {
 
   return (
     <main className="min-h-screen bg-[#F8F5EF] font-sans text-[#0D1F17]">
-      <Navbar/>
+      <Navbar />
       <Hero onReferralClick={() => setReferralOpen(true)} />
       <About />
       <Services />
       <Editorial />
       <Safeguarding />
       <Contact />
-        <Footer/>
-        {/* <ProvisionPage/> */}
+      <Footer />
+      {/* <ProvisionPage/> */}
       {/* <ReferralModal open={referralOpen} onClose={() => setReferralOpen(false)} /> */}
     </main>
   );
