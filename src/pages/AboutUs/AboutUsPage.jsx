@@ -38,37 +38,35 @@ const about = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#F8F5EF] font-sans text-[#0D1F17]">
-      <Navbar/>
-      {/* HERO */}
-      <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-[#0D1F17] px-5 pt-28 text-center text-white sm:px-8 lg:px-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#1F5C3A_0%,transparent_55%),radial-gradient(ellipse_at_bottom_right,#2D865355_0%,transparent_45%),linear-gradient(180deg,#0D1F17_0%,#163826_100%)]" />
+    <main className="min-h-screen bg-[var(--brand-surface)] font-sans text-[var(--brand-primary)]">
+      <Navbar />
 
-        <div className="absolute inset-0 bg-[linear-gradient(#9ECFB012_1px,transparent_1px),linear-gradient(90deg,#9ECFB012_1px,transparent_1px)] bg-[size:60px_60px]" />
+      {/* HERO */}
+      <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-[var(--brand-primary)] px-5 pt-28 text-center text-white sm:px-8 lg:px-10">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--brand-secondary)_0%,transparent_55%),radial-gradient(ellipse_at_bottom_right,var(--brand-muted)_0%,transparent_45%),linear-gradient(180deg,var(--brand-primary)_0%,var(--brand-secondary)_100%)]" />
 
         <div className="relative z-10 mx-auto max-w-5xl">
-          <p className="mb-6 text-xs font-medium uppercase tracking-[0.3em] text-[#E4BC72]">
+          <p className="mb-6 text-xs font-medium uppercase tracking-[0.3em] text-[var(--brand-accent)]">
             About Next Level
           </p>
 
-          <h1 className="font-serif text-6xl font-light leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl">
+          <h1 className="font-serif text-6xl font-light leading-[0.95] sm:text-7xl lg:text-8xl">
             {about.title}
           </h1>
         </div>
       </section>
 
       {/* INTRODUCTION */}
-      <section className="bg-[#F8F5EF] px-5 py-24 sm:px-8 lg:px-10">
+      <section className="bg-[var(--brand-surface)] px-5 py-24 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-5xl">
           <div className="mb-5 flex items-center gap-3">
-            <div className="h-px w-10 bg-[#C5973A]" />
-
-            <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">
+            <div className="h-px w-10 bg-[var(--brand-accent)]" />
+            <span className="text-xs font-medium uppercase tracking-[0.3em] text-[var(--brand-accent)]">
               Introduction
             </span>
           </div>
 
-          <p className="text-lg font-light leading-9 text-[#4A5568]">
+          <p className="text-lg font-light leading-9 text-[var(--brand-primary)]/70">
             {about.introduction}
           </p>
         </div>
@@ -79,14 +77,13 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <div className="mb-5 flex items-center gap-3">
-              <div className="h-px w-10 bg-[#C5973A]" />
-
-              <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">
+              <div className="h-px w-10 bg-[var(--brand-accent)]" />
+              <span className="text-xs font-medium uppercase tracking-[0.3em] text-[var(--brand-accent)]">
                 Values
               </span>
             </div>
 
-            <h2 className="font-serif text-5xl font-light text-[#163826] sm:text-6xl">
+            <h2 className="font-serif text-5xl font-light text-[var(--brand-primary)] sm:text-6xl">
               What guides our work
             </h2>
           </div>
@@ -95,9 +92,11 @@ export default function AboutPage() {
             {about.values.map((value) => (
               <div
                 key={value}
-                className="rounded-3xl bg-[#F8F5EF] p-8 text-center shadow-sm"
+                className="rounded-3xl bg-[var(--brand-surface)] p-8 text-center shadow-sm"
               >
-                <p className="font-medium text-[#163826]">{value}</p>
+                <p className="font-medium text-[var(--brand-primary)]">
+                  {value}
+                </p>
               </div>
             ))}
           </div>
@@ -105,21 +104,20 @@ export default function AboutPage() {
       </section>
 
       {/* MISSION */}
-      <section className="bg-[#F1EDE3] px-5 py-24 sm:px-8 lg:px-10">
+      <section className="bg-[var(--brand-surface)] px-5 py-24 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-5xl text-center">
           <div className="mb-5 flex items-center justify-center gap-3">
-            <div className="h-px w-10 bg-[#C5973A]" />
-
-            <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">
+            <div className="h-px w-10 bg-[var(--brand-accent)]" />
+            <span className="text-xs font-medium uppercase tracking-[0.3em] text-[var(--brand-accent)]">
               Our Mission
             </span>
           </div>
 
-          <h2 className="font-serif text-5xl font-light leading-tight text-[#163826] sm:text-6xl">
+          <h2 className="font-serif text-5xl font-light leading-tight text-[var(--brand-primary)] sm:text-6xl">
             Supporting young people towards brighter futures.
           </h2>
 
-          <p className="mx-auto mt-8 max-w-4xl text-lg font-light leading-9 text-[#4A5568]">
+          <p className="mx-auto mt-8 max-w-4xl text-lg font-light leading-9 text-[var(--brand-primary)]/70">
             {about.mission}
           </p>
         </div>
@@ -130,14 +128,13 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <div className="mb-5 flex items-center gap-3">
-              <div className="h-px w-10 bg-[#C5973A]" />
-
-              <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">
+              <div className="h-px w-10 bg-[var(--brand-accent)]" />
+              <span className="text-xs font-medium uppercase tracking-[0.3em] text-[var(--brand-accent)]">
                 Our Aims
               </span>
             </div>
 
-            <h2 className="font-serif text-5xl font-light text-[#163826] sm:text-6xl">
+            <h2 className="font-serif text-5xl font-light text-[var(--brand-primary)] sm:text-6xl">
               What we strive to achieve
             </h2>
           </div>
@@ -146,13 +143,13 @@ export default function AboutPage() {
             {about.aims.map((aim, index) => (
               <div
                 key={aim}
-                className="flex items-start gap-5 rounded-3xl bg-[#F8F5EF] p-8 shadow-sm"
+                className="flex items-start gap-5 rounded-3xl bg-[var(--brand-surface)] p-8 shadow-sm"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#163826] text-sm font-semibold text-[#E4BC72]">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--brand-primary)] text-sm font-semibold text-[var(--brand-accent)]">
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
-                <p className="text-lg font-light leading-8 text-[#4A5568]">
+                <p className="text-lg font-light leading-8 text-[var(--brand-primary)]/70">
                   {aim}
                 </p>
               </div>
@@ -162,36 +159,35 @@ export default function AboutPage() {
       </section>
 
       {/* TEAM */}
-      <section className="bg-[#F8F5EF] px-5 py-24 sm:px-8 lg:px-10">
+      <section className="bg-[var(--brand-surface)] px-5 py-24 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-5xl">
           <div className="mb-12 text-center">
             <div className="mb-5 flex items-center justify-center gap-3">
-              <div className="h-px w-10 bg-[#C5973A]" />
-
-              <span className="text-xs font-medium uppercase tracking-[0.3em] text-[#C5973A]">
+              <div className="h-px w-10 bg-[var(--brand-accent)]" />
+              <span className="text-xs font-medium uppercase tracking-[0.3em] text-[var(--brand-accent)]">
                 Our Team
               </span>
             </div>
 
-            <h2 className="font-serif text-5xl font-light text-[#163826] sm:text-6xl">
+            <h2 className="font-serif text-5xl font-light text-[var(--brand-primary)] sm:text-6xl">
               Meet the team
             </h2>
           </div>
 
           <div className="mx-auto max-w-md rounded-3xl bg-white p-10 text-center shadow-sm">
-            <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-[#163826] font-serif text-3xl text-[#E4BC72]">
+            <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-[var(--brand-primary)] font-serif text-3xl text-[var(--brand-accent)]">
               M
             </div>
 
-            <h3 className="mt-6 font-serif text-3xl text-[#163826]">
+            <h3 className="mt-6 font-serif text-3xl text-[var(--brand-primary)]">
               {about.team[0].name}
             </h3>
 
-            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-[#C5973A]">
+            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-[var(--brand-accent)]">
               {about.team[0].role}
             </p>
 
-            <p className="mt-6 text-[15px] font-light leading-8 text-[#4A5568]">
+            <p className="mt-6 text-[15px] font-light leading-8 text-[var(--brand-primary)]/70">
               {about.team[0].description}
             </p>
           </div>

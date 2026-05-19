@@ -1,0 +1,16 @@
+/* globals.css */
+
+:root {
+  /* Core surfaces */
+  --brand-primary: #0b0b0b;     /* soft near-black for text */
+  --brand-secondary: #ffffff;   /* clean white background */
+
+  /* Accent system (pilot yellow) */
+  --brand-accent: #f5c542;      /* main pilot yellow */
+  --brand-accent-2: #ffd86b;    /* lighter highlight */
+  --brand-accent-dark: #c99a1a; /* deeper contrast yellow */
+
+  /* Neutrals */
+  --brand-muted: #6b7280;       /* soft grey text */
+  --brand-surface: #f9fafb;     /* off-white background */
+}

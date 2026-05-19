@@ -1,6 +1,6 @@
 
 
-export default function ReferralModal({ open, onClose }) {
+export default function ReferralButton({ open, onClose }) {
     if (!open) return null;
   
     function handleSubmit(event) {
@@ -22,6 +22,7 @@ export default function ReferralModal({ open, onClose }) {
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#C5973A]">
                 Referral Form
               </p>
+              
               <h2 className="mt-2 font-serif text-3xl font-light text-[#163826] sm:text-4xl">
                 Make a Referral
               </h2>
