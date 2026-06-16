@@ -106,7 +106,7 @@ export default function Navbar() {
           ))}
 
           <a
-            href="mailto:   admin@nextlevelplus.co.uk"
+            href="mailto:admin@nextlevelplus.co.uk?subject=Enquiry%20from%20Next%20Level%20Website&body=Hello,%0D%0A%0D%0AI%20would%20like%20to%20get%20in%20touch%20regarding..."
             className="ml-3 rounded-lg bg-gradient-to-r from-[#C5973A] to-[#E4BC72] px-5 py-3 text-sm font-semibold text-[#0D1F17] shadow-lg shadow-[#C5973A]/20 transition hover:-translate-y-0.5 hover:shadow-xl"
           >
             Get In Touch
