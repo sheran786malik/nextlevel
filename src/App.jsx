@@ -15,6 +15,8 @@ import AboutPage from './pages/AboutUs/AboutUsPage'
 import SafeguardingPage from './pages/Safeguarding/Safeguarding'
 import CurriculumPage from './pages/Curriculum/Curriculum'
 import PoliciesPage from './pages/Policies/PoliciesPage'
+import SummerCamps from './pages/Provisions/SummerCamps'
+import OnlineTutoring from './pages/Provisions/OnlineTutoring'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -27,6 +29,8 @@ function App() {
     <Route path="/provisions/supported-accommodation" element={<SupportedAccommodationPage/>} />
     <Route path="/provisions/alternative-provisions" element={<AlternativeProvisionPage/>} />
     <Route path="/provisions/bespoke-curriculum" element={<BespokeCurriculumPage/>} />
+    <Route path="/provisions/summer-camps" element={<SummerCamps/>} />
+    <Route path="/provisions/online-tutoring" element={<OnlineTutoring/>} />
     <Route path="/about-us" element={<AboutPage/>} />
     <Route path="/safeguarding" element={<SafeguardingPage/>} />
     <Route path="/curriculum" element={<CurriculumPage/>} />

@@ -29,6 +29,8 @@ export default function Navbar() {
     ["Alternative Provisions", "/provisions/alternative-provisions"],
     ["Supported Accommodation", "/provisions/supported-accommodation"],
     ["Bespoke Curriculum", "/provisions/bespoke-curriculum"],
+    ["Summer Camps", "/provisions/summer-camps"],
+    ["Online Tutoring", "/provisions/online-tutoring"]
   ];
 
   return (

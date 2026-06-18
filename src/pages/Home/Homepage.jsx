@@ -305,55 +305,58 @@ function Services() {
         </div>
  
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {services.map((service, index) => (
-            <Link
-              to={service.path}
-              id={service.id}
-              key={service.title}
-              className="scroll-mt-28 group relative block overflow-hidden rounded-3xl p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
-              style={{
-                border: "1px solid color-mix(in srgb, var(--brand-primary) 5%, transparent)",
-                backgroundColor: "var(--brand-surface)",
-              }}
-            >
-              <div
-                className="absolute right-0 top-0 h-24 w-24 rounded-bl-full"
-                style={{ backgroundColor: "color-mix(in srgb, var(--brand-accent-2) 70%, transparent)" }}
-              />
-              <p
-                className="absolute right-7 top-6 font-serif text-sm tracking-[0.25em]"
-                style={{ color: "var(--brand-muted)" }}
-              >
-                0{index + 1}
-              </p>
-              <div className="relative z-10">
-                <div className="mb-6 text-4xl">{service.icon}</div>
-                <h3
-                  className="font-serif text-3xl font-normal"
-                  style={{ color: "var(--brand-primary)" }}
-                >
-                  {service.title}
-                </h3>
-                <p
-                  className="mt-4 text-sm font-light leading-7"
-                  style={{ color: "var(--brand-muted)" }}
-                >
-                  {service.body}
-                </p>
-                <div
-                  className="mt-8 inline-flex items-center gap-3 text-sm font-medium"
-                  style={{ color: "color-mix(in srgb, var(--brand-primary) 70%, var(--brand-accent-2))" }}
-                >
-                  Learn more
-                  <span
-                    className="h-px w-6 transition-all group-hover:w-10"
-                    style={{ backgroundColor: "color-mix(in srgb, var(--brand-primary) 70%, var(--brand-accent-2))" }}
-                  />
-                </div>
-              </div>
-            </Link>
-          ))}
+  {services.map((service, index) => (
+    <Link
+      to={service.path}
+      id={service.id}
+      key={service.title}
+      className="group relative block overflow-hidden rounded-3xl p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+    >
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 scale-105 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+        style={{
+          backgroundImage: `url(${service.image})`,
+        }}
+      />
+
+      {/* Dark Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/70" />
+
+      {/* Subtle Accent Glow */}
+      <div
+        className="absolute right-0 top-0 h-24 w-24 rounded-bl-full opacity-40"
+        style={{
+          backgroundColor:
+            "color-mix(in srgb, var(--brand-accent-2) 70%, transparent)",
+        }}
+      />
+
+      {/* Index */}
+      <p
+        className="absolute right-7 top-6 font-serif text-sm tracking-[0.25em] text-white/70"
+      >
+        0{index + 1}
+      </p>
+
+      {/* Content */}
+      <div className="relative z-10">
+        <h3 className="font-serif text-3xl font-normal text-white">
+          {service.title}
+        </h3>
+
+        <p className="mt-4 text-sm font-light leading-7 text-white/80">
+          {service.body}
+        </p>
+
+        <div className="mt-8 inline-flex items-center gap-3 text-sm font-medium text-white/90">
+          Learn more
+          <span className="h-px w-6 bg-white/70 transition-all group-hover:w-10" />
         </div>
+      </div>
+    </Link>
+  ))}
+</div>
       </div>
     </section>
   );
@@ -387,8 +390,7 @@ function Editorial() {
           className="mt-8 max-w-xl text-[15px] font-light leading-8"
           style={{ color: "var(--brand-muted)" }}
         >
-          We believe deeply in the potential of every young person — even those
-          who have been let down by the system. Our holistic, trauma-informed
+          We believe deeply in the potential of every young person. Our holistic, trauma-informed
           approach creates the conditions for real, lasting change.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
