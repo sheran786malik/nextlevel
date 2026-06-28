@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+
+import EBSAIMAGE from '../../assets/anxiety.jpg'
  
 import { Link } from "react-router-dom";
  
@@ -9,6 +11,7 @@ const services = [
     id: "ebsa-support",
     path: "/provisions/ebsa-support",
     icon: "🧠",
+    image:EBSAIMAGE,
     title: "EBSA Support",
     body: "Specialist, compassionate provision for children experiencing Emotionally Based School Avoidance.",
   },
@@ -16,6 +19,7 @@ const services = [
     id: "alternative-provisions",
     path: "/provisions/alternative-provisions",
     icon: "🏫",
+    image:EBSAIMAGE,
     title: "Alternative Provisions",
     body: "High-quality placements that keep education central for young people outside mainstream school.",
   },
@@ -23,6 +27,7 @@ const services = [
     id: "supported-accommodation",
     path: "/provisions/supported-accommodation",
     icon: "🏡",
+    image:EBSAIMAGE,
     title: "Supported Accommodation",
     body: "Safe, nurturing homes with 24/7 professional support for young people aged 16+.",
   },
@@ -30,6 +35,7 @@ const services = [
     id: "bespoke-curriculum",
     path: "/provisions/bespoke-curriculum",
     icon: "📚",
+    image:EBSAIMAGE,
     title: "Bespoke Curriculum",
     body: "Personalised learning pathways mapped around individual needs, confidence and long-term outcomes.",
   },
@@ -266,7 +272,7 @@ function About() {
  
 function Services() {
   const reveal = useReveal();
- 
+
   return (
     <section
       id="services"
@@ -303,65 +309,59 @@ function Services() {
             people where they are and build support around what they need.
           </p>
         </div>
- 
+
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-  {services.map((service, index) => (
-    <Link
-      to={service.path}
-      id={service.id}
-      key={service.title}
-      className="group relative block overflow-hidden rounded-3xl p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
-    >
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 scale-105 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-        style={{
-          backgroundImage: `url(${service.image})`,
-        }}
-      />
+          {services.map((service, index) => (
+            <Link
+              to={service.path}
+              id={service.id}
+              key={service.title}
+              className="group relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+            >
+              {/* Image */}
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
 
-      {/* Dark Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/70" />
+                {/* Gradient — sits at the base so text stays legible */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-      {/* Subtle Accent Glow */}
-      <div
-        className="absolute right-0 top-0 h-24 w-24 rounded-bl-full opacity-40"
-        style={{
-          backgroundColor:
-            "color-mix(in srgb, var(--brand-accent-2) 70%, transparent)",
-        }}
-      />
+                {/* Index */}
+                <span className="absolute left-6 top-5 font-serif text-sm tracking-[0.25em] text-white/80">
+                  0{index + 1}
+                </span>
 
-      {/* Index */}
-      <p
-        className="absolute right-7 top-6 font-serif text-sm tracking-[0.25em] text-white/70"
-      >
-        0{index + 1}
-      </p>
+                {/* Title + reveal-on-hover detail */}
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <h3 className="font-serif text-2xl font-normal leading-tight text-white">
+                    {service.title}
+                  </h3>
 
-      {/* Content */}
-      <div className="relative z-10">
-        <h3 className="font-serif text-3xl font-normal text-white">
-          {service.title}
-        </h3>
+                  <div className="grid grid-rows-[0fr] transition-all duration-500 ease-out group-hover:grid-rows-[1fr]">
+                    <div className="overflow-hidden">
+                      <p className="mt-3 text-sm font-light leading-7 text-white/85">
+                        {service.body}
+                      </p>
+                    </div>
+                  </div>
 
-        <p className="mt-4 text-sm font-light leading-7 text-white/80">
-          {service.body}
-        </p>
-
-        <div className="mt-8 inline-flex items-center gap-3 text-sm font-medium text-white/90">
-          Learn more
-          <span className="h-px w-6 bg-white/70 transition-all group-hover:w-10" />
+                  <div className="mt-4 inline-flex items-center gap-3 text-sm font-medium text-white">
+                    Learn more
+                    <span className="h-px w-6 bg-white/60 transition-all duration-300 group-hover:w-10" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
-      </div>
-    </Link>
-  ))}
-</div>
       </div>
     </section>
   );
 }
- 
 function Editorial() {
   const reveal = useReveal();
  
