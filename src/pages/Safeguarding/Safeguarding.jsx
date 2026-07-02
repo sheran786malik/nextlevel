@@ -99,7 +99,7 @@ export default function SafeguardingPage() {
         </div>
       </section>
 
-      {/* MEANING */}
+      {/* MEANING — services-style cards */}
       <section className="bg-white px-5 py-24 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 max-w-3xl">
@@ -115,25 +115,52 @@ export default function SafeguardingPage() {
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {safeguardingPrinciples.map((item, index) => (
               <div
                 key={item.title}
-                className="relative overflow-hidden rounded-3xl bg-[var(--brand-surface)] p-8 shadow-sm"
+                className="group relative flex aspect-[4/5] flex-col overflow-hidden rounded-3xl shadow-sm ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(155deg, var(--brand-primary) 0%, color-mix(in srgb, var(--brand-primary) 70%, var(--brand-accent-2)) 55%, var(--brand-secondary) 130%)",
+                }}
               >
-                <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-full bg-[var(--brand-muted)]/30" />
+                {/* Decorative rings, echoing the Editorial section */}
+                <div
+                  className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full border transition-transform duration-700 ease-out group-hover:scale-110"
+                  style={{ borderColor: "color-mix(in srgb, var(--brand-secondary) 15%, transparent)" }}
+                />
+                <div
+                  className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full border"
+                  style={{ borderColor: "color-mix(in srgb, var(--brand-secondary) 8%, transparent)" }}
+                />
 
-                <p className="relative z-10 font-serif text-sm tracking-[0.25em] text-[var(--brand-accent)]">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
+                {/* Gradient — sits at the base so text stays legible */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-                <h3 className="relative z-10 mt-5 font-serif text-3xl text-[var(--brand-primary)]">
-                  {item.title}
-                </h3>
+                {/* Index */}
+                <span className="absolute left-6 top-5 font-serif text-sm tracking-[0.25em] text-white/80">
+                  0{index + 1}
+                </span>
 
-                <p className="relative z-10 mt-4 text-sm font-light leading-7 text-[var(--brand-primary)]/70">
-                  {item.text}
-                </p>
+                {/* Title + reveal-on-hover detail */}
+                <div className="relative mt-auto p-6">
+                  <h3 className="font-serif text-2xl font-normal leading-tight text-white">
+                    {item.title}
+                  </h3>
+
+                  <div className="grid grid-rows-[0fr] transition-all duration-500 ease-out group-hover:grid-rows-[1fr]">
+                    <div className="overflow-hidden">
+                      <p className="mt-3 text-sm font-light leading-7 text-white/85">
+                        {item.text}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 inline-flex items-center gap-3 text-sm font-medium text-white">
+                    <span className="h-px w-6 bg-white/60 transition-all duration-300 group-hover:w-10" />
+                  </div>
+                </div>
               </div>
             ))}
           </div>

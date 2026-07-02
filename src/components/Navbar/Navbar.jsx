@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import logo from '../../assets/logo.jpg' // adjust path/filename to match your assets folder
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -43,18 +44,11 @@ export default function Navbar() {
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
         <Link to="/" className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#E4BC72] font-serif text-xl text-[#E4BC72]">
-            N
-          </div>
-
-          <div>
-            <p className="font-serif text-xl leading-none text-white">
-              Next Level
-            </p>
-            <p className="mt-1 text-[10px] uppercase tracking-[0.28em] text-[#E4BC72]">
-              Support Services
-            </p>
-          </div>
+          <img
+            src={logo}
+            alt="Next Level Support Services"
+            className="h-25 w-25 object-cover bg-transparent"
+          />
         </Link>
 
         <nav className="hidden items-center gap-2 lg:flex">
