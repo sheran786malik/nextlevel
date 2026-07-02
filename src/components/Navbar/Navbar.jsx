@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import logo from '../../assets/logo.jpg' // adjust path/filename to match your assets folder
+import logo from '../../assets/logo.png' // adjust path/filename to match your assets folder
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -47,7 +47,7 @@ export default function Navbar() {
           <img
             src={logo}
             alt="Next Level Support Services"
-            className="h-25 w-25 object-cover bg-transparent"
+            className="h-35 w-35 object-cover"
           />
         </Link>
 
