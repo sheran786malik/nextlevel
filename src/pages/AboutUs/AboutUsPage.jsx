@@ -123,7 +123,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* AIMS */}
+      {/* AIMS — services-style cards */}
       <section className="bg-white px-5 py-24 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
@@ -139,19 +139,42 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
             {about.aims.map((aim, index) => (
               <div
                 key={aim}
-                className="flex items-start gap-5 rounded-3xl bg-[var(--brand-surface)] p-8 shadow-sm"
+                className="group relative flex aspect-[4/5] flex-col overflow-hidden rounded-3xl shadow-sm ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(155deg, var(--brand-primary) 0%, color-mix(in srgb, var(--brand-primary) 70%, var(--brand-accent-2)) 55%, var(--brand-secondary) 130%)",
+                }}
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--brand-primary)] text-sm font-semibold text-[var(--brand-accent)]">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
+                {/* Decorative rings, echoing the Editorial section */}
+                <div
+                  className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full border transition-transform duration-700 ease-out group-hover:scale-110"
+                  style={{ borderColor: "color-mix(in srgb, var(--brand-secondary) 15%, transparent)" }}
+                />
+                <div
+                  className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full border"
+                  style={{ borderColor: "color-mix(in srgb, var(--brand-secondary) 8%, transparent)" }}
+                />
 
-                <p className="text-lg font-light leading-8 text-[var(--brand-primary)]/70">
-                  {aim}
-                </p>
+                {/* Gradient — sits at the base so text stays legible */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+                {/* Index */}
+                <span className="absolute left-6 top-5 font-serif text-sm tracking-[0.25em] text-white/80">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                {/* Aim text */}
+                <div className="relative mt-auto p-6">
+                  <p className="font-serif text-xl font-normal leading-snug text-white transition-transform duration-500 ease-out group-hover:-translate-y-1">
+                    {aim}
+                  </p>
+
+                  <div className="mt-4 h-px w-6 bg-white/60 transition-all duration-300 group-hover:w-10" />
+                </div>
               </div>
             ))}
           </div>
