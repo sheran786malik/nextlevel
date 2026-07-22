@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
-import EBSAIMAGE from '../../assets/anxiety.jpg'
+import {services_card_01,services_card_02,services_card_03,services_card_04} from '../../assets/home'
  
 import { Link } from "react-router-dom";
  
@@ -11,7 +11,7 @@ const services = [
     id: "ebsa-support",
     path: "/provisions/ebsa-support",
     icon: "🧠",
-    image:EBSAIMAGE,
+    image:services_card_01,
     title: "EBSA Support",
     body: "Specialist, compassionate provision for children experiencing Emotionally Based School Avoidance.",
   },
@@ -19,7 +19,7 @@ const services = [
     id: "alternative-provisions",
     path: "/provisions/alternative-provisions",
     icon: "🏫",
-    image:EBSAIMAGE,
+    image:services_card_02,
     title: "Alternative Provisions",
     body: "High-quality placements that keep education central for young people outside mainstream school.",
   },
@@ -27,7 +27,7 @@ const services = [
     id: "supported-accommodation",
     path: "/provisions/supported-accommodation",
     icon: "🏡",
-    image:EBSAIMAGE,
+    image:services_card_03,
     title: "Supported Accommodation",
     body: "Safe, nurturing homes with 24/7 professional support for young people aged 16+.",
   },
@@ -35,7 +35,7 @@ const services = [
     id: "bespoke-curriculum",
     path: "/provisions/bespoke-curriculum",
     icon: "📚",
-    image:EBSAIMAGE,
+    image:services_card_04,
     title: "Bespoke Curriculum",
     body: "Personalised learning pathways mapped around individual needs, confidence and long-term outcomes.",
   },

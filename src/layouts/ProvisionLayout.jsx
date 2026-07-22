@@ -49,7 +49,7 @@ export default function ProvisionLayout({ data, onReferralClick }) {
         </div>
       </section>
 
-      {/* FEATURES — services-style cards */}
+      {/* FEATURES — services-style cards with images */}
       <section className="bg-white px-5 py-24 sm:px-8 lg:px-10 lg:py-32">
         <div className="mx-auto max-w-7xl">
           <h2 className="font-serif text-5xl font-light">
@@ -61,12 +61,26 @@ export default function ProvisionLayout({ data, onReferralClick }) {
               <div
                 key={f.title}
                 className="group relative flex aspect-[4/5] flex-col overflow-hidden rounded-3xl shadow-sm ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(155deg, var(--brand-primary) 0%, color-mix(in srgb, var(--brand-primary) 70%, var(--brand-accent-2)) 55%, var(--brand-secondary) 130%)",
-                }}
               >
-                {/* Decorative rings, echoing the Editorial section */}
+                {/* Background image */}
+                {f.image && (
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+                    style={{ backgroundImage: `url(${f.image})` }}
+                  />
+                )}
+
+                {/* Gradient overlay for text legibility */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(155deg, var(--brand-primary) 0%, color-mix(in srgb, var(--brand-primary) 70%, var(--brand-accent-2)) 55%, var(--brand-secondary) 130%)",
+                    opacity: 0.85,
+                  }}
+                />
+
+                {/* Decorative rings */}
                 <div
                   className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full border transition-transform duration-700 ease-out group-hover:scale-110"
                   style={{ borderColor: "color-mix(in srgb, var(--brand-secondary) 15%, transparent)" }}
@@ -76,7 +90,7 @@ export default function ProvisionLayout({ data, onReferralClick }) {
                   style={{ borderColor: "color-mix(in srgb, var(--brand-secondary) 8%, transparent)" }}
                 />
 
-                {/* Gradient — sits at the base so text stays legible */}
+                {/* Dark gradient at bottom for text */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
                 {/* Index */}

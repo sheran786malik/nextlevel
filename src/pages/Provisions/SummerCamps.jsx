@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ProvisionLayout from "../../layouts/ProvisionLayout";
+import { emotional } from "../../assets/EBSA_Support"; // 1. Import the image
 
 const provision = {
   label: "Specialist Provision",
@@ -17,16 +18,19 @@ const provision = {
       icon: "🌱",
       title: "Confidence Building",
       text: "Activities designed to rebuild self-esteem and engagement.",
+      image: emotional, // 2. Added image
     },
     {
       icon: "📘",
       title: "Continued Learning",
       text: "Light academic support to maintain progress over summer.",
+      image: emotional, // 2. Added image
     },
     {
       icon: "🤝",
       title: "Social Development",
       text: "Group-based activities to build communication and teamwork.",
+      image: emotional, // 2. Added image
     },
   ],
 };
@@ -35,42 +39,11 @@ export default function SummerCamps() {
   const [referralOpen, setReferralOpen] = useState(false);
 
   return (
+    // 3. Removed the duplicate JSX inside. ProvisionLayout will now 
+    // automatically build the page using the data above.
     <ProvisionLayout
       data={provision}
       onReferralClick={() => setReferralOpen(true)}
-    >
-      <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2">
-        <h2 className="font-serif text-5xl font-light">
-          {provision.overviewTitle}
-        </h2>
-
-        <div className="space-y-5 text-[var(--brand-primary)]/70">
-          {provision.overviewParagraphs.map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
-        </div>
-      </div>
-
-      <div className="mt-24 mx-auto max-w-7xl">
-        <h2 className="font-serif text-5xl font-light">
-          What the programme includes
-        </h2>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {provision.features.map((f) => (
-            <div
-              key={f.title}
-              className="rounded-3xl bg-[var(--brand-light)] p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-            >
-              <div className="text-3xl">{f.icon}</div>
-              <h3 className="mt-4 font-serif text-2xl">{f.title}</h3>
-              <p className="mt-2 text-sm text-[var(--brand-primary)]/70">
-                {f.text}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </ProvisionLayout>
+    />
   );
 }
