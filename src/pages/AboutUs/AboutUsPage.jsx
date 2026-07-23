@@ -1,5 +1,7 @@
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+// 1. Added image imports
+import { card_01, card_02, card_03, card_04, card_05 } from "../../assets/about";
 
 const about = {
   title: "About Us",
@@ -18,12 +20,13 @@ const about = {
   mission:
     "Our mission is to provide compassionate, structured and personalised support that helps young people rebuild confidence, engage positively with education and move towards brighter futures.",
 
+  // 2. Updated aims to include the image property
   aims: [
-    "Provide safe and nurturing support environments",
-    "Help young people re-engage with education",
-    "Promote emotional wellbeing and stability",
-    "Support independence and personal growth",
-    "Work collaboratively with families and professionals",
+    { text: "Provide safe and nurturing support environments", image: card_01 },
+    { text: "Help young people re-engage with education", image: card_02 },
+    { text: "Promote emotional wellbeing and stability", image: card_03 },
+    { text: "Support independence and personal growth", image: card_04 },
+    { text: "Work collaboratively with families and professionals", image: card_05 },
   ],
 
   team: [
@@ -123,7 +126,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* AIMS — services-style cards */}
+      {/* AIMS — services-style cards with images */}
       <section className="bg-white px-5 py-24 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
@@ -142,25 +145,39 @@ export default function AboutPage() {
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
             {about.aims.map((aim, index) => (
               <div
-                key={aim}
+                key={aim.text}
                 className="group relative flex aspect-[4/5] flex-col overflow-hidden rounded-3xl shadow-sm ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(155deg, var(--brand-primary) 0%, color-mix(in srgb, var(--brand-primary) 70%, var(--brand-accent-2)) 55%, var(--brand-secondary) 130%)",
-                }}
               >
-                {/* Decorative rings, echoing the Editorial section */}
+                {/* Background image with sharpness filter */}
+                {aim.image && (
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+                    style={{ backgroundImage: `url(${aim.image})`, filter: 'contrast(1.1) saturate(1.2)' }}
+                  />
+                )}
+
+                {/* Gradient overlay - Lowered opacity so image shows through */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(155deg, var(--brand-primary) 0%, color-mix(in srgb, var(--brand-primary) 70%, var(--brand-accent-2)) 55%, var(--brand-secondary) 130%)",
+                    opacity: 0.25,
+                  }}
+                />
+
+                {/* Decorative rings */}
                 <div
                   className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full border transition-transform duration-700 ease-out group-hover:scale-110"
-                  style={{ borderColor: "color-mix(in srgb, var(--brand-secondary) 15%, transparent)" }}
+                  style={{ borderColor: "color-mix(in srgb, var(--brand-secondary) 50%, transparent)" }}
                 />
                 <div
                   className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full border"
-                  style={{ borderColor: "color-mix(in srgb, var(--brand-secondary) 8%, transparent)" }}
+                  style={{ borderColor: "color-mix(in srgb, var(--brand-secondary) 30%, transparent)" }}
                 />
 
-                {/* Gradient — sits at the base so text stays legible */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                {/* Dark gradient at bottom for text */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent from-40%" />
 
                 {/* Index */}
                 <span className="absolute left-6 top-5 font-serif text-sm tracking-[0.25em] text-white/80">
@@ -170,7 +187,7 @@ export default function AboutPage() {
                 {/* Aim text */}
                 <div className="relative mt-auto p-6">
                   <p className="font-serif text-xl font-normal leading-snug text-white transition-transform duration-500 ease-out group-hover:-translate-y-1">
-                    {aim}
+                    {aim.text}
                   </p>
 
                   <div className="mt-4 h-px w-6 bg-white/60 transition-all duration-300 group-hover:w-10" />

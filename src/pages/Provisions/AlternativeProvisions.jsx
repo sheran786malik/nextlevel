@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ProvisionLayout from "../../layouts/ProvisionLayout";
-import { emotional } from "../../assets/EBSA_Support"; // 1. Import the image
+import { card_01, card_02, card_03 } from "../../assets/Alternative_Provisions"; // 1. Import the image
 
 const provision = {
   label: "Specialist Provision",
@@ -22,19 +22,19 @@ const provision = {
       icon: "🏫",
       title: "Structured Learning",
       text: "Clear timetables and routines that support re-engagement with education.",
-      image: emotional, // 2. Added image
+      image: card_01, // 2. Added image
     },
     {
       icon: "🧠",
       title: "Trauma-Informed Approach",
       text: "Support that understands emotional barriers to learning and attendance.",
-      image: emotional, // 2. Added image
+      image: card_02, // 2. Added image
     },
     {
       icon: "📈",
       title: "Progress Focused",
       text: "Measurable outcomes across academic, behavioural and personal development.",
-      image: emotional, // 2. Added image
+      image: card_03, // 2. Added image
     },
   ],
 };
@@ -43,7 +43,7 @@ export default function AlternativeProvisionPage() {
   const [referralOpen, setReferralOpen] = useState(false);
 
   return (
-    // 3. Removed the duplicate JSX inside. ProvisionLayout will now 
+    // 3. Removed the duplicate JSX inside. ProvisionLayout will now
     // automatically build the Overview and Features sections using the data above.
     <ProvisionLayout
       data={provision}

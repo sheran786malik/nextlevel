@@ -1,5 +1,6 @@
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import { features } from "./cards"; // 1. Import the features data (adjust path if needed)
 
 const curriculumAreas = [
   {
@@ -105,26 +106,76 @@ export default function CurriculumPage() {
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              "Personalised learning plans",
-              "Trauma-informed teaching",
-              "Small-step progress tracking",
-              "Confidence and wellbeing focus",
-              "Preparation for adulthood",
-              "Multi-agency collaboration",
-            ].map((item, index) => (
+          {/* 2. Map over the imported features data */}
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {features.map((f, i) => (
               <div
-                key={item}
-                className="rounded-3xl bg-[var(--brand-surface)] p-8 shadow-sm"
+                key={f.title}
+                className="group relative flex aspect-[4/5] flex-col overflow-hidden rounded-3xl shadow-sm ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
               >
-                <p className="font-serif text-sm tracking-[0.25em] text-[var(--brand-accent)]">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
+                {/* Background image */}
+                {f.image && (
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+                    style={{ backgroundImage: `url(${f.image})` }}
+                  />
+                )}
 
-                <h3 className="mt-5 font-serif text-3xl text-[var(--brand-primary)]">
-                  {item}
-                </h3>
+                {/* Gradient overlay for text legibility */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(155deg, var(--brand-primary) 0%, color-mix(in srgb, var(--brand-primary) 70%, var(--brand-accent-2)) 55%, var(--brand-secondary) 130%)",
+                    opacity: 0.4,
+                  }}
+                />
+
+                {/* Decorative rings */}
+                <div
+                  className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full border transition-transform duration-700 ease-out group-hover:scale-110"
+                  style={{
+                    borderColor:
+                      "color-mix(in srgb, var(--brand-secondary) 50%, transparent)",
+                  }}
+                />
+                <div
+                  className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full border"
+                  style={{
+                    borderColor:
+                      "color-mix(in srgb, var(--brand-secondary) 30%, transparent)",
+                  }}
+                />
+
+                {/* Dark gradient at bottom for text */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+                {/* Index */}
+                <span className="absolute left-6 top-5 font-serif text-sm tracking-[0.25em] text-white/80">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
+                {/* Icon */}
+                <div className="absolute right-6 top-5 text-3xl">{f.icon}</div>
+
+                {/* Title + reveal-on-hover detail */}
+                <div className="relative mt-auto p-6">
+                  <h3 className="font-serif text-2xl font-normal leading-tight text-white">
+                    {f.title}
+                  </h3>
+
+                  <div className="grid grid-rows-[0fr] transition-all duration-500 ease-out group-hover:grid-rows-[1fr]">
+                    <div className="overflow-hidden">
+                      <p className="mt-3 text-sm font-light leading-7 text-white/85">
+                        {f.text}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 inline-flex items-center gap-3 text-sm font-medium text-white">
+                    <span className="h-px w-6 bg-white/60 transition-all duration-300 group-hover:w-10" />
+                  </div>
+                </div>
               </div>
             ))}
           </div>

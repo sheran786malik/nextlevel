@@ -52,9 +52,7 @@ export default function ProvisionLayout({ data, onReferralClick }) {
       {/* FEATURES — services-style cards with images */}
       <section className="bg-white px-5 py-24 sm:px-8 lg:px-10 lg:py-32">
         <div className="mx-auto max-w-7xl">
-          <h2 className="font-serif text-5xl font-light">
-            What this includes
-          </h2>
+          <h2 className="font-serif text-5xl font-light">What this includes</h2>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {data.features.map((f, i) => (
@@ -70,28 +68,34 @@ export default function ProvisionLayout({ data, onReferralClick }) {
                   />
                 )}
 
-                {/* Gradient overlay for text legibility */}
+                {/* Gradient overlay for text legibility - SHARPER CONTRAST */}
                 <div
                   className="absolute inset-0"
                   style={{
                     backgroundImage:
                       "linear-gradient(155deg, var(--brand-primary) 0%, color-mix(in srgb, var(--brand-primary) 70%, var(--brand-accent-2)) 55%, var(--brand-secondary) 130%)",
-                    opacity: 0.85,
+                    opacity: 0.35,
                   }}
                 />
 
                 {/* Decorative rings */}
                 <div
                   className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full border transition-transform duration-700 ease-out group-hover:scale-110"
-                  style={{ borderColor: "color-mix(in srgb, var(--brand-secondary) 15%, transparent)" }}
+                  style={{
+                    borderColor:
+                      "color-mix(in srgb, var(--brand-secondary) 50%, transparent)",
+                  }}
                 />
                 <div
                   className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full border"
-                  style={{ borderColor: "color-mix(in srgb, var(--brand-secondary) 8%, transparent)" }}
+                  style={{
+                    borderColor:
+                      "color-mix(in srgb, var(--brand-secondary) 30%, transparent)",
+                  }}
                 />
 
-                {/* Dark gradient at bottom for text */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                {/* Dark gradient at bottom for text - STRONGER */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
                 {/* Index */}
                 <span className="absolute left-6 top-5 font-serif text-sm tracking-[0.25em] text-white/80">
@@ -127,9 +131,7 @@ export default function ProvisionLayout({ data, onReferralClick }) {
 
       {/* CTA */}
       <section className="bg-[var(--brand-primary)] px-5 py-24 text-center text-white">
-        <h2 className="font-serif text-5xl font-light">
-          Discuss a referral
-        </h2>
+        <h2 className="font-serif text-5xl font-light">Discuss a referral</h2>
 
         <button
           onClick={onReferralClick}

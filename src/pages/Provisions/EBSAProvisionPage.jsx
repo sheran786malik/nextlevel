@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ProvisionLayout from "../../layouts/ProvisionLayout";
-import { emotional } from "../../assets/EBSA_Support";
+import { emotional, card_02 ,card_03} from "../../assets/EBSA_Support";
 
 const ebsaData = {
   label: "Specialist Provision",
@@ -28,13 +28,13 @@ const ebsaData = {
       icon: "🏫",
       title: "Re-engagement",
       text: "Gradual return to learning at the child’s pace.",
-      image: emotional,
+      image: card_02,
     },
     {
       icon: "🤝",
       title: "Multi-agency Working",
       text: "Coordination with schools, LA and families.",
-      image: emotional,
+      image: card_03,
     },
   ],
 };

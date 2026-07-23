@@ -1,38 +1,47 @@
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import { card_01, card_02, card_03, card_04, card_05, card_06, card_07, card_08 } from "../../assets/safeguarding";
 
 const safeguardingPrinciples = [
   {
     title: "Prioritising Young People",
     text: "The welfare, safety and wellbeing of every young person is placed at the centre of all decisions.",
+    image: card_01,
   },
   {
     title: "Vigilance and Awareness",
     text: "We remain alert to concerns, risks, changes in behaviour and anything that may indicate a young person needs support.",
+    image: card_02,
   },
   {
     title: "Safer Recruitment",
     text: "Staff and adults working with young people are expected to follow appropriate safer recruitment and suitability checks.",
+    image: card_03,
   },
   {
     title: "Clear Policies and Procedures",
     text: "Safeguarding concerns are handled through clear reporting routes, escalation processes and professional standards.",
+    image: card_04,
   },
   {
     title: "Open Communication",
     text: "We encourage young people, families, staff and professionals to raise concerns early and openly.",
+    image: card_05,
   },
   {
     title: "Multi-agency Working",
     text: "We work with schools, local authorities, social care and relevant professionals to keep young people safe.",
+    image: card_06,
   },
   {
     title: "Empowerment",
     text: "Young people are supported to understand their rights, boundaries and how to seek help when needed.",
+    image: card_07,
   },
   {
     title: "Continuous Improvement",
     text: "We regularly review safeguarding practice to strengthen safety, accountability and quality of care.",
+    image: card_08,
   },
 ];
 
@@ -99,7 +108,7 @@ export default function SafeguardingPage() {
         </div>
       </section>
 
-      {/* MEANING — services-style cards */}
+      {/* MEANING — services-style cards with images */}
       <section className="bg-white px-5 py-24 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 max-w-3xl">
@@ -120,22 +129,46 @@ export default function SafeguardingPage() {
               <div
                 key={item.title}
                 className="group relative flex aspect-[4/5] flex-col overflow-hidden rounded-3xl shadow-sm ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(155deg, var(--brand-primary) 0%, color-mix(in srgb, var(--brand-primary) 70%, var(--brand-accent-2)) 55%, var(--brand-secondary) 130%)",
-                }}
               >
-                {/* Decorative rings, echoing the Editorial section */}
+                {/* Lazy load image */}
+                {item.image && (
+                  <img 
+                    src={item.image} 
+                    alt="" 
+                    loading="lazy" 
+                    className="absolute inset-0 h-full w-full object-cover opacity-0 pointer-events-none" 
+                  />
+                )}
+
+                {/* Background image */}
+                {item.image && (
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+                    style={{ backgroundImage: `url(${item.image})` }}
+                  />
+                )}
+
+                {/* Gradient overlay for text legibility */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(155deg, var(--brand-primary) 0%, color-mix(in srgb, var(--brand-primary) 70%, var(--brand-accent-2)) 55%, var(--brand-secondary) 130%)",
+                    opacity: 0.4,
+                  }}
+                />
+
+                {/* Decorative rings */}
                 <div
                   className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full border transition-transform duration-700 ease-out group-hover:scale-110"
-                  style={{ borderColor: "color-mix(in srgb, var(--brand-secondary) 15%, transparent)" }}
+                  style={{ borderColor: "color-mix(in srgb, var(--brand-secondary) 50%, transparent)" }}
                 />
                 <div
                   className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full border"
-                  style={{ borderColor: "color-mix(in srgb, var(--brand-secondary) 8%, transparent)" }}
+                  style={{ borderColor: "color-mix(in srgb, var(--brand-secondary) 30%, transparent)" }}
                 />
 
-                {/* Gradient — sits at the base so text stays legible */}
+                {/* Dark gradient at bottom for text */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
                 {/* Index */}
