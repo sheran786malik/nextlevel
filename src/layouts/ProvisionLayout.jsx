@@ -208,17 +208,19 @@ function ReferralModal({ open, onClose }) {
               Make a Referral
             </h2>
           </div>
+          
+          {/* FIXED CLOSE BUTTON */}
           <button
             type="button"
             onClick={onClose}
-            className="rounded-full px-3 py-1.5 text-sm transition"
+            className="rounded-full px-3 py-1.5 text-sm transition hover:opacity-80"
             style={{
               backgroundColor: "var(--brand-primary)",
               color: "var(--brand-secondary)",
             }}
             aria-label="Close referral form"
           >
-            
+            ✕
           </button>
         </div>
 
@@ -371,7 +373,7 @@ function ReferralModal({ open, onClose }) {
             <button
               type="button"
               onClick={onClose}
-              className="rounded-xl px-6 py-3 text-sm font-medium transition"
+              className="rounded-xl px-6 py-3 text-sm font-medium transition hover:bg-black/5"
               style={{
                 border: "1px solid color-mix(in srgb, var(--brand-primary) 10%, transparent)",
                 color: "var(--brand-primary)",
