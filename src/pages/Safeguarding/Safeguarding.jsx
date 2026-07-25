@@ -217,7 +217,7 @@ export default function SafeguardingPage() {
           </p>
 
           <a
-            href={`mailto:${contactEmail}`}
+            href={`mailto:admin@nextlevelplus.co.uk`}
             className="mt-10 inline-block rounded-xl bg-[var(--brand-accent)] px-9 py-4 text-sm font-semibold text-[var(--brand-primary)] shadow-xl transition hover:bg-[var(--brand-accent-dark)] hover:-translate-y-1"
           >
             Email Safeguarding Contact

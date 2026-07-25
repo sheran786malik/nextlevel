@@ -102,8 +102,6 @@ export default function ProvisionLayout({ data, onReferralClick }) {
                   {String(i + 1).padStart(2, "0")}
                 </span>
 
-                {/* Icon */}
-                <div className="absolute right-6 top-5 text-3xl">{f.icon}</div>
 
                 {/* Title + reveal-on-hover detail */}
                 <div className="relative mt-auto p-6">
